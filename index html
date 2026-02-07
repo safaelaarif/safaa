@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chimera AI Interface</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .chat-container { width: 80%; max-width: 800px; height: 80vh; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; }
+        .messages { flex: 1; padding: 20px; overflow-y: auto; border-bottom: 1px solid #eee; }
+        
+        /* Style spécifique pour le bloc de réflexion <think> */
+        think {
+            display: block;
+            background-color: #f0f7ff;
+            border-left: 4px solid #007bff;
+            padding: 10px 15px;
+            margin: 10px 0;
+            color: #555;
+            font-style: italic;
+            font-size: 0.9em;
+            border-radius: 4px;
+        }
+
+        .user-msg { text-align: right; color: #007bff; font-weight: bold; margin-bottom: 15px; }
+        .ai-msg { text-align: left; margin-bottom: 15px; line-height: 1.5; }
+        
+        .input-area { padding: 20px; display: flex; gap: 10px; }
+        input { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 6px; outline: none; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="messages" id="chat-box">
+        <div class="ai-msg">
+            <strong>Chimera R1T2 :</strong>
+            <think>Le modèle initialise la session. Analyse du contexte utilisateur terminée.</think>
+            Bonjour ! Je suis prêt pour une analyse de long-contexte (jusqu'à 130k tokens). Comment puis-je vous aider aujourd'hui ?
+        </div>
+    </div>
+    
+    <div class="input-area">
+        <input type="text" id="user-input" placeholder="Posez votre question ici...">
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+</div>
+
+<script>
+    function sendMessage() {
+        const input = document.getElementById('user-input');
+        const chatBox = document.getElementById('chat-box');
+        if (input.value.trim() === "") return;
+
+        // Ajouter le message utilisateur
+        chatBox.innerHTML += `<div class="user-msg">Moi : ${input.value}</div>`;
+        
+        // Simulation d'une réponse avec pensée (think)
+        setTimeout(() => {
+            chatBox.innerHTML += `
+                <div class="ai-msg">
+                    <strong>Chimera R1T2 :</strong>
+                    <think>Traitement de la requête "${input.value}" via l'Assembly-of-Experts. Optimisation vLLM activée.</think>
+                    Ceci est une réponse simulée basée sur votre entrée.
+                </div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }, 1000);
+
+        input.value = "";
+    }
+</script>
+
+</body>
+</html>
