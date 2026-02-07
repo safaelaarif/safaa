@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinity-Large-Preview Showcase</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: #1e293b;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            padding: 2rem;
+            max-width: 600px;
+            border: 1px solid #334155;
+        }
+
+        .header {
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            margin: 0;
+            color: #38bdf8;
+            font-size: 1.8rem;
+        }
+
+        .badge {
+            background: #0ea5e9;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-item {
+            background: #0f172a;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #f472b6;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .description {
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-top: 1.5rem;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        <span class="badge">Arcee AI Frontier Model</span>
+        <h1>Trinity-Large-Preview</h1>
+    </div>
+
+    <div class="description">
+        Un modèle <strong>Sparse MoE</strong> conçu pour l'excellence créative et les capacités agentiques avancées.
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-item">
+            <span class="stat-value">400B</span>
+            <span class="stat-label">Total Paramètres</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">13B</span>
+            <span class="stat-label">Paramètres Actifs</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">512k</span>
+            <span class="stat-label">Context Window</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">4-of-256</span>
+            <span class="stat-label">Expert Routing</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        Optimisé pour OpenCode, Cline et les flux de travail complexes.
+    </div>
+</div>
+
+</body>
+</html>
